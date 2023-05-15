@@ -1,14 +1,7 @@
-
-import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
-import java.io.InputStream;
+import java.io.*;
 
 public class HTTPServer {
 
-	/**
-	 * The main method.
-	 * @param args the file to serve and the port to listen on.
-	 */
 	public static void main(String[] args) {
 		try { 
 			/*

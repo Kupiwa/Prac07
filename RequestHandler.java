@@ -18,7 +18,6 @@ public class RequestHandler extends Thread {
         this.header = headerText.getBytes();
     }
 
-    @Override
     public void run() {
         try {
             ServerSocket serverSocket = new ServerSocket(port);
@@ -42,10 +41,12 @@ public class RequestHandler extends Thread {
                         connection.getOutputStream().flush();
                     }
                     connection.getOutputStream().close();
+                    serverSocket.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
+            
         } catch (IOException e) {
             System.err.println("The port could not be opened and is probably already occupied.");
         }
